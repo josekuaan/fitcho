@@ -1,0 +1,30 @@
+name: flutter_contactless_sdk
+description: A powerful contactless payment SDK for Flutter, bridgeable to React Native.
+version: 1.0.0
+homepage: https://github.com/your-repo/flutter_contactless_sdk
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+  flutter: '>=3.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_plugin_android_lifecycle: ^2.0.17
+  nfc_manager: ^3.3.0
+  crypto: ^3.0.3
+  hex: ^0.2.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+  plugin:
+    platforms:
+      android:
+        package: com.contactless
+        pluginClass: ContactlessPlugin
+      ios:
+        pluginClass: ContactlessPlugin

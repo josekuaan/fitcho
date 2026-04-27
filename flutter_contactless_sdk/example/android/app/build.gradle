@@ -1,0 +1,46 @@
+plugins {
+    id "com.android.application"
+    id "kotlin-android"
+    // The Flutter Gradle Plugin must be applied after the Android plugin.
+    id "dev.flutter.flutter-gradle-plugin"
+}
+
+android {
+    namespace "com.contactless.example"
+    compileSdkVersion 34
+
+    defaultConfig {
+        applicationId "com.contactless.example"
+        minSdkVersion 26
+        targetSdkVersion 34
+        versionCode 1
+        versionName "1.0.0"
+    }
+
+    buildTypes {
+        release {
+            signingConfig signingConfigs.debug
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    kotlinOptions {
+        jvmTarget = '17'
+    }
+}
+
+flutter {
+    source '../..'
+}
+
+dependencies {
+    implementation "io.flutter:flutter_embedding_debug:1.0.0-a5cb96369ef86c7e85abf5d662a1ca5d89775053"
+    implementation "io.flutter:armeabi_v7a_debug:1.0.0-a5cb96369ef86c7e85abf5d662a1ca5d89775053"
+    implementation "io.flutter:arm64_v8a_debug:1.0.0-a5cb96369ef86c7e85abf5d662a1ca5d89775053"
+    implementation "io.flutter:x86_64_debug:1.0.0-a5cb96369ef86c7e85abf5d662a1ca5d89775053"
+    implementation "io.flutter:x86_debug:1.0.0-a5cb96369ef86c7e85abf5d662a1ca5d89775053"
+}
